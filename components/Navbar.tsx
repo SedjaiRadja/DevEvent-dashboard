@@ -49,7 +49,7 @@ const Navbar = () => {
           <DropdownMenuTrigger asChild>
             <Button variant="outline">
               <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarImage src="/logo.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </Button>
