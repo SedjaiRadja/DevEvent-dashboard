@@ -1,5 +1,5 @@
 "use client";
-import {
+import {SidebarGroupAction,
   Sidebar,
   SidebarContent,
   SidebarFooter,
@@ -7,10 +7,12 @@ import {
   SidebarMenu,
   SidebarGroupLabel,
   SidebarHeader,
+  SidebarMenuBadge,
   SidebarMenuButton,
-  SidebarMenuItem,
+  SidebarMenuItem,SidebarSeparator,
 } from "./ui/sidebar";
-import {
+import {Plus,
+  Projector,
   Home,
   Inbox,
   Calendar,
@@ -56,7 +58,7 @@ const items = [
 ];
 const AppSidebar = () => {
   return (
-    <Sidebar>
+    <Sidebar collapsible="icon">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
@@ -69,6 +71,8 @@ const AppSidebar = () => {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
+      <SidebarSeparator />
+      
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Applications</SidebarGroupLabel>
@@ -82,9 +86,39 @@ const AppSidebar = () => {
                       <span>{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
+                  {item.title === "Inbox" && (
+                    <SidebarMenuBadge>
+                      16
+                    </SidebarMenuBadge>
+                  )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
+          </SidebarContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add Project</span>          
+          </SidebarGroupAction>
+          <SidebarContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                <Link href="/">
+                <Projector /> See All Projects
+                </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                <Link href="/">
+                <Plus /> Add New Project
+                </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+
           </SidebarContent>
         </SidebarGroup>
       </SidebarContent>
@@ -96,13 +130,14 @@ const AppSidebar = () => {
                 <SidebarMenuButton>
                   <User2 />
                   Radja Sedjai
-                  <ChevronUp />
+                  <ChevronUp className="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuContent align="end">
                 <DropdownMenuItem>Account</DropdownMenuItem>
-                <DropdownMenuItem>Logout</DropdownMenuItem>
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                  <SidebarSeparator />
+                <DropdownMenuItem variant="destructive">Sign Out</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>

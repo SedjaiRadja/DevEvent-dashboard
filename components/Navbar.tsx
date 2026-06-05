@@ -3,7 +3,7 @@ import { Moon, Settings, User, LogOut, Sun } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
-
+import {SidebarTrigger} from "./ui/sidebar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between p-4">
       {/* left */}
-      collapsebutton
+      <SidebarTrigger/>
       {/* right */}
       <div className="flex items-center gap-4">
         <Link href="/">dashboard</Link>
