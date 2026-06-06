@@ -2,7 +2,7 @@
 import { type ChartConfig } from "@/components/ui/chart"
 import { Label,Pie,PieChart,XAxis,YAxis } from "recharts"
 import { ChartTooltipContent ,ChartLegend, ChartLegendContent,ChartTooltip,ChartContainer,type ChartConfig } from "@/components/ui/chart"
-import {TrendingUp} from "lucide-react";
+import {TrendingUp}  from "lucide-react";
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--chart-1)" },
   { browser: "safari", visitors: 200, fill: "red" },
