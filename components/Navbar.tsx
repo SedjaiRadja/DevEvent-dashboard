@@ -18,7 +18,7 @@ import Link from "next/link";
 const Navbar = () => {
   const { setTheme } = useTheme();
   return (
-    <nav className="flex items-center justify-between p-4">
+    <nav className="flex items-center justify-between p-4 sticky top-0 bg-background z-10">
       {/* left */}
       <SidebarTrigger/>
       {/* right */}

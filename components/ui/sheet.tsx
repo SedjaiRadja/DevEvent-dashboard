@@ -127,7 +127,7 @@ function SheetDescription({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Description>) {
   return (
-    <SheetPrimitive.Description
+    <SheetPrimitive.Description asChild
       data-slot="sheet-description"
       className={cn("text-sm text-muted-foreground", className)}
       {...props}
